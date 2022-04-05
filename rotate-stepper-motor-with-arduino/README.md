@@ -2,7 +2,7 @@
 
 # Components
 
-1. 28BYJ motor
+1. 28BYJ-48 motor
 2. ULN2003 driver board
 
 ## Connection diagram
