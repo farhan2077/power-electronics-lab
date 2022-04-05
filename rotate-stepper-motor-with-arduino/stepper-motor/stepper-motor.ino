@@ -1,4 +1,7 @@
-// Written By Nikodem Bartnik - nikodembartnik.pl
+// Gear ratio = 64:1
+// Each step corresponds to 11.25° rotation
+// Steps per revolution = 32 (360°/11.25° = 32)
+// Total steps = 2038 (32*64 = 2038)
 
 #define STEPPER_PIN_1 8
 #define STEPPER_PIN_2 9
@@ -15,8 +18,17 @@ void setup() {
 }
 
 void loop() {
-  OneStep(false);
-  delay(2);
+  for (int i = 0; i <= 1000; i++) {
+    OneStep(true);
+    delay(2);
+  }
+  delay(2000);
+
+  for (int i = 0; i <= 1000; i++) {
+    OneStep(false);
+    delay(2);
+  }
+  delay(2000);
 }
 
 void OneStep(bool dir) {
